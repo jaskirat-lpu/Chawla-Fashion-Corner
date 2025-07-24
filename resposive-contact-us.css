@@ -1,0 +1,82 @@
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        /* Adjust based on navbar height */
+        left: 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+    }
+
+    .nav-links.active {
+        display: flex;
+        top: 18%;
+        background: #f1eee9;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+        width: fit-content;
+    }
+
+    .search-bar {
+        width: fit-content;
+        margin-top: 10px;
+        display: flex;
+    }
+
+    .search-bar input[type="text"] {
+        flex-grow: 1;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        padding: 15px;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .navbar-brand {
+        width: 100%;
+        text-align: left;
+    }
+
+    .contact-form,
+.company-info {
+  flex: 1 1 100%;
+  width: 90%;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  max-width: 90%;
+  min-width: 90%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group{
+  width: -webkit-fill-available;
+}
+
+}
+

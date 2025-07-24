@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chawla Fashion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+   <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+</head>
+<body>
+
+    <header>
+           <a href="index.html"> <img src="logo.png" alt=""></a>
+
+    </header>
+    <nav class="navbar">
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#product">Products</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="Contact-us.html">Contact Us</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <button type="submit">Search</button>
+        </div>
+    </nav>
+    <!-- <div class="carousel-bg">
+      <img src="left.jpg" alt="">
+      <img src="right.jpg" alt="">
+    </div> -->
+    <div id="carousel-container">
+      
+        <div class="carousel" style="transform: translateX(-100%);">
+          <div class="carousel-item"><img src="1.jpg" alt="Image1"></div>
+          <div class="carousel-item"><img src="2.jpg" alt="Image2"></div>
+          <div class="carousel-item"><img src="3.jpg" alt="Image3"></div>
+          <div class="carousel-item"><img src="4.jpg" alt="Image4"></div>
+        </div>
+        <button class="prev" onclick="prevSlides()">❮</button>
+        <button class="next" onclick="nextSlides()">❯</button>
+      </div>
+    
+      <div class="product-bgimg">
+    <h1 id="product">Products</h1>
+    <section class="products">
+        <div class="product">
+          <a href=""><img src="co-ord-sets.jpg" alt="Co-Ord Sets"></a>
+        </div>
+        <div class="product">
+            <a href=""><img src="stitched-suits.jpg" alt="Stitched Suits"></a>
+            
+        </div>
+        <div class="product">
+           <a href=""> <img src="girls-tops.jpg" alt="Girls Tops"></a>
+           
+        </div>
+        <div class="product">
+            <a href=""><img src="girls-kurtis.jpg" alt="Girls Kurtis"></a>
+            
+        </div>
+    </section>
+  </div>
+    <section class="banner">
+        <img src="new-arrival.jpg" alt="New Arrival Banner">
+      </section>
+
+      <footer>
+        <div class="column categories">
+          <h2>SHOP BY CATEGORIES</h2>
+          <ul>
+            <li><a href="">Stitched suits</a></li>
+            <li><a href="">Girl’s Tops</a></li>
+            <li><a href="">Girl’s kurtis</a></li>
+            <li><a href="">Stitched suits</a></li>
+          </ul>
+        </div>
+        <div class="column hours">
+          <h2>OPENING HOURS</h2>
+          <div class="season">
+            <strong>Summer</strong>
+            <p>Mon-Fri - 8 am to 9 pm</p>
+            <p>Sunday - 8 am to 2:30 pm</p>
+          </div>
+          <div class="season">
+            <strong>winter</strong>
+            <p>Mon-Fri - 8 am to 9 pm</p>
+            <p>Sunday - 8 am to 2:30 pm</p>
+          </div>
+        </div>
+        <div class="column logo">
+          <img src="favicon.svg" alt="Logo">
+        </div>
+      </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

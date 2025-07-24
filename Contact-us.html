@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact-us</title>
+  <link rel="stylesheet" href="Contact-us.css">
+  <link rel="stylesheet" href="resposive-contact-us.css">
+  <link rel="stylesheet" href="./bootstrap.css">
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    #root {
+      margin: 30px auto;
+      padding: 20px;
+      background: #f8f9fa;
+      border: 1px solid #ddd;
+      max-width: 400px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    #root h1 {
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+    #root button {
+      padding: 8px 16px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html"><img src="logo.png" alt=""></a>
+  </header>
+
+  <nav class="navbar">
+    <div class="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="Contact-us.html">Contact Us</a></li>
+    </ul>
+    <div class="search-bar">
+      <input type="text" placeholder="Search">
+      <button type="submit">Search</button>
+    </div>
+  </nav>
+
+  <div id="root"></div>
+
+  <section class="contact-section" id="contact-us">
+    <div class="container-contact">
+      <h1>Products</h1>
+      <div class="contact-flex">
+        <div class="contact-form conatct-bac-bodr-boxdow">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone_no.">Phone No.</label>
+              <input type="text" id="phone_no." name="phone_no." placeholder="Enter your phone no." required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+        <div class="company-info">
+          <h2>Get in Touch</h2>
+          <p class="bg-info"><b>Email:</b> contact@chawlafashion.co</p>
+          <p class="bg-success"><strong>Phone:</strong> +91-9494949494</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="column categories">
+      <h2>SHOP BY CATEGORIES</h2>
+      <ul>
+        <li><a href="">Stitched suits</a></li>
+        <li><a href="">Girl’s Tops</a></li>
+        <li><a href="">Girl’s kurtis</a></li>
+        <li><a href="">Stitched suits</a></li>
+      </ul>
+    </div>
+    <div class="column hours">
+      <h2>OPENING HOURS</h2>
+      <div class="season">
+        <strong>Summer</strong>
+        <p>Mon-Fri - 8 am to 9 pm</p>
+        <p>Sunday - 8 am to 2:30 pm</p>
+      </div>
+      <div class="season">
+        <strong>winter</strong>
+        <p>Mon-Fri - 8 am to 9 pm</p>
+        <p>Sunday - 8 am to 2:30 pm</p>
+      </div>
+    </div>
+    <div class="column logo">
+      <img src="favicon.svg" alt="Logo">
+    </div>
+  </footer>
+
+  <script type="text/babel">
+    const { useState } = React;
+
+    function App() {
+      const [count, setCount] = useState(0);
+
+      const handleRate = () => {
+        if (count < 5) {
+          setCount(count + 1);
+        }
+      };
+
+      return (
+        <div>
+          <h1>Hello, Dear Customer!</h1>
+          <button onClick={handleRate}>Rate Us</button>
+          <p>You have rated us {count} stars.</p>
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const data = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone_no.").value,
+        message: document.getElementById("message").value
+      };
+
+      try {
+        const response = await fetch("http://localhost:5000/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+        alert(result.message || "Message sent!");
+      } catch (error) {
+        alert("Error sending message");
+      }
+    });
+  </script>
+</body>
+</html>
